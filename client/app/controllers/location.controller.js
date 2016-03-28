@@ -6,17 +6,32 @@
         .module('locationApp')
         .controller('locationController', locationController);
 
-    locationController.$inject = ['locationService'];
+    locationController.$inject = ['$location', 'locationService', 'adalAuthenticationService'];
 
-    function locationController(locationService) {
+    function locationController($location, locationService, adalService) {
         var vm = this;
+        vm.error = '';
         vm.getlocation = getLocation;
+        vm.latitude = '';
+        vm.login = login;
+        vm.logout = logout;
+        vm.longitude = '';
 
         function getLocation() {
-            locationService.location().success(function (location) {
+            locationService.location().then(function (location) {
                 vm.latitude = location.latitude;
                 vm.longitude = location.longitude;
+            }, function (error) {
+                vm.error =  error;
             });
+        }
+
+        function login() {
+            adalService.login();
+        }
+
+        function logout() {
+            adalService.logout();
         }
     };
 

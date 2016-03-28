@@ -4,9 +4,9 @@
 
     angular
         .module('locationApp')
-        .constant('events', {
-            APP_ID: '74ab0edd-2f61-4fe8-9cd7-b2acce0d990c',
-            TENANT_ID: '5bf38d04-abf0-4167-be67-f977f8af8cbf'
+        .constant('adalConstants', {
+            APP_ID: '01f012dd-d6ca-4c2f-9e23-e2b387cf7d19',
+            TENANT: 'comaroundtest.onmicrosoft.com'
         });
 
 })(window, window.angular);

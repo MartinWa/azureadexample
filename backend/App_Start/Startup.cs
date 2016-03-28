@@ -1,5 +1,8 @@
-﻿using backend;
+﻿using System.Configuration;
+using System.IdentityModel.Tokens;
+using backend;
 using Microsoft.Owin;
+using Microsoft.Owin.Security.ActiveDirectory;
 using Owin;
 
 [assembly: OwinStartup(typeof(Startup))]
@@ -16,6 +19,15 @@ namespace backend
 
         private static void ConfigureAuth(IAppBuilder app)
         {
+            var activeDirectoryBearerAuthenticationOptions = new WindowsAzureActiveDirectoryBearerAuthenticationOptions
+            {
+                Tenant = ConfigurationManager.AppSettings["ida:tenant"],
+                TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidAudience = ConfigurationManager.AppSettings["ida:audience"]
+                }
+            };
+            app.UseWindowsAzureActiveDirectoryBearerAuthentication(activeDirectoryBearerAuthenticationOptions);
         }
     }
 }

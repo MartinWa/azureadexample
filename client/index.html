@@ -2,18 +2,22 @@
 <html data-ng-app="locationApp" ng-strict-di>
 <head>
     <title></title>
-    <meta charset="utf-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"/>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link href="content/app.css" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-route.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-sanitize.min.js"></script>
+    <script src="https://secure.aadcdn.microsoftonline-p.com/lib/1.0.8/js/adal.min.js"></script>
+    <script src="https://secure.aadcdn.microsoftonline-p.com/lib/1.0.8/js/adal-angular.min.js"></script>
 </head>
 <body>
     <data-ng-view></data-ng-view>
     <script src="app/app.module.js"></script>
-    <script src="app/app.routes.js"></script>
+    <script src="app/app.config.adal.js"></script>
+    <script src="app/app.config.routes.js"></script>
     <script src="app/app.constants.js"></script>
     <script src="app/services/location.service.js"></script>
     <script src="app/controllers/location.controller.js"></script>

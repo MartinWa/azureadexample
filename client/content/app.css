@@ -1,0 +1,11 @@
+﻿.error {
+    color: red;
+}
+
+.info {
+    color: lightblue;
+}
+
+.right-align {
+    float: right;
+}

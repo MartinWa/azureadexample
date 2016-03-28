@@ -4,6 +4,7 @@ using backend.Models;
 namespace backend.Controllers
 {
     [RoutePrefix("api/location")]
+    [Authorize]
     public class LocationController : ApiController
     {
         [Route("")]

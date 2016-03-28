@@ -66,12 +66,14 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\app.config.adal.js" />
     <Content Include="app\app.constants.js" />
     <Content Include="app\app.module.js" />
-    <Content Include="app\app.routes.js" />
+    <Content Include="app\app.config.routes.js" />
     <Content Include="app\controllers\location.controller.js" />
     <Content Include="app\services\location.service.js" />
     <Content Include="app\views\location.html" />
+    <Content Include="content\app.css" />
     <Content Include="index.html" />
     <Content Include="packages.config">
       <SubType>Designer</SubType>

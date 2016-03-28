@@ -3,6 +3,6 @@
     'use strict';
 
     angular
-        .module('locationApp', ['ngRoute', 'ngSanitize']);
+        .module('locationApp', ['ngRoute', 'ngSanitize', 'AdalAngular']);
 
 })(window, window.angular);

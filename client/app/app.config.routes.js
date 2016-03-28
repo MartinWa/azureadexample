@@ -4,15 +4,17 @@
 
     angular
         .module('locationApp')
-        .config(['$routeProvider', routeConfigurator]);
+        .config(config);
 
-    function routeConfigurator($routeProvider) {
+    config.$inject = ['$routeProvider'];
+
+    function config($routeProvider) {
         $routeProvider
           .when('/', {
               templateUrl: 'app/views/location.html',
               controller: 'locationController',
               controllerAs: 'vm'//,
-              // requireADLogin: true
+              //requireADLogin: true
           });
 
         $routeProvider.otherwise({ redirectTo: '/' });
