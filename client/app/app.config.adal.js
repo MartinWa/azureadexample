@@ -8,21 +8,20 @@
 
     config.$inject = ['$httpProvider', 'adalAuthenticationServiceProvider', 'adalConstants'];
 
-    function config($httpProvider, adalAuthenticationServiceProvider, adalConstants) {
+    function config($httpProvider, adalProvider, adalConstants) {
 
         var endpoints = {
-            'https://localhost:44310': 'http://comaroundtest.onmicrosoft.com/locationServer'
+            'https://localhost:44310': 'https://comaroundtest.onmicrosoft.com/locationServer'
         };
 
         var adalConfig = {
             instance: 'https://login.microsoftonline.com/',
             tenant: adalConstants.TENANT,
             clientId: adalConstants.APP_ID,
-            endpoints: endpoints//,
-       //     extraQueryParameter: 'nux=1',
-        //    cacheLocation: 'localStorage' // enable this for IE, as sessionStorage does not work for localhost. 
+            endpoints: endpoints,
+            extraQueryParameter: 'nux=1'
         };
-        adalAuthenticationServiceProvider.init(adalConfig, $httpProvider);
+        adalProvider.init(adalConfig, $httpProvider);
     }
 
 })(window, window.angular);
