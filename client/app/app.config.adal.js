@@ -11,7 +11,7 @@
     function config($httpProvider, adalAuthenticationServiceProvider, adalConstants) {
 
         var endpoints = {
-            'https://localhost:44300': 'http://comaroundtest.onmicrosoft.com/location.backend'
+            'https://localhost:44310': 'http://comaroundtest.onmicrosoft.com/locationServer'
         };
 
         var adalConfig = {
@@ -19,7 +19,8 @@
             tenant: adalConstants.TENANT,
             clientId: adalConstants.APP_ID,
             endpoints: endpoints//,
-           // cacheLocation: 'localStorage' // enable this for IE, as sessionStorage does not work for localhost. 
+       //     extraQueryParameter: 'nux=1',
+        //    cacheLocation: 'localStorage' // enable this for IE, as sessionStorage does not work for localhost. 
         };
         adalAuthenticationServiceProvider.init(adalConfig, $httpProvider);
     }

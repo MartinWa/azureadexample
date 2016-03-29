@@ -11,7 +11,7 @@
     function locationService($http) {
         return {
             location: function () {
-                return $http.get('https://localhost:44300/api/location/');
+                return $http.get('https://localhost:44310/api/location/');
             }
         }
     };
