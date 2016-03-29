@@ -11,13 +11,13 @@ namespace client2.Controllers
     [Authorize]
     public class LocationController : Controller
     {
-        private static readonly string ClientId = ConfigurationManager.AppSettings["ida:clientId"];
+        private static readonly string Audience = ConfigurationManager.AppSettings["ida:audience"];
         private static readonly string AppKey = ConfigurationManager.AppSettings["ida:appKey"];
         private static readonly string AadInstance = ConfigurationManager.AppSettings["ida:aadInstance"];
         private static readonly string Tenant = ConfigurationManager.AppSettings["ida:tenant"];
         private static readonly string Authority = $"{AadInstance}{Tenant}";
         private static readonly AuthenticationContext AuthContext = new AuthenticationContext(Authority);
-        private static readonly ClientCredential ClientCredential = new ClientCredential(ClientId, AppKey);
+        private static readonly ClientCredential ClientCredential = new ClientCredential(Audience, AppKey);
 
         // appID of the web api
         private static readonly string ServiceResourceId = ConfigurationManager.AppSettings["ida:serviceResourceId"];
