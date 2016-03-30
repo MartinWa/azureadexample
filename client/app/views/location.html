@@ -1,31 +1,23 @@
-﻿<div class="row">
-    <div class="col-md-6">Latitude</div>
-    <div class="col-md-6">{{vm.latitude}}</div>
-</div>
-<div class="row">
-    <div class="col-md-6">Longitude</div>
-    <div class="col-md-6">{{vm.longitude}}</div>
-</div>
-<div class="row">
-    <div class="col-md-6">
-        <button class="btn btn-primary" data-ng-click="vm.login()" data-ng-hide="userInfo.isAuthenticated">Login</button>
-    </div>
-    <div class="col-md-6">
-        <button class="btn btn-primary" data-ng-click="vm.logout()" data-ng-show="userInfo.isAuthenticated">Logout</button>
-    </div>
-</div>
-<div class="row">
-    <div class="col-md-12">
-        <button class="btn btn-primary" data-ng-click="vm.getlocation()">Get Location</button>
-    </div>
-</div>
-<div class="row">
-    <div class="col-md-12 info">
-        {{userInfo}}
-    </div>
-</div>
-<div class="row" data-ng-hide="vm.error === ''">
-    <div class="col-md-12 error">
-        {{vm.error}}
-    </div>
-</div>
+﻿<button class="btn btn-primary" data-ng-click="vm.login()" data-ng-hide="userInfo.isAuthenticated">Login</button>
+<button class="btn btn-primary" data-ng-click="vm.logout()" data-ng-show="userInfo.isAuthenticated">Logout</button>
+
+<table class="table">
+    <tr>
+        <td>Latitude</td>
+        <td>{{vm.latitude}}</td>
+    </tr>
+    <tr>
+        <td>Longitude</td>
+        <td>{{vm.longitude}}</td>
+    </tr>
+    <tr>
+        <td>Date</td>
+        <td>{{vm.date}}</td>
+    </tr>
+</table>
+
+<button class="btn  btn-success" data-ng-click="vm.getlocation()">Get Location</button>
+
+<pre class="bg-info" data-ng-show="userInfo.isAuthenticated">{{vm.userInfo | json:4}}</pre>
+<div class="bg-danger" data-ng-hide="vm.error === ''">{{vm.error}}</div>
+

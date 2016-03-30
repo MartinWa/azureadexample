@@ -1,4 +1,5 @@
-﻿using System.Web.Http;
+﻿using System;
+using System.Web.Http;
 using backend.Models;
 
 namespace backend.Controllers
@@ -14,7 +15,8 @@ namespace backend.Controllers
             var model = new LocationViewModel
             {
                 Latitude = 10,
-                Longitude = 20
+                Longitude = 20,
+                DateTime = DateTime.UtcNow
             };
             return Ok(model);
         }
