@@ -6,18 +6,18 @@
         .module('locationApp')
         .config(config);
 
-    config.$inject = ['$httpProvider', 'adalAuthenticationServiceProvider', 'adalConstants'];
+    config.$inject = ['$httpProvider', 'adalAuthenticationServiceProvider'];
 
-    function config($httpProvider, adalProvider, adalConstants) {
+    function config($httpProvider, adalProvider) {
 
         var endpoints = {
-            'https://localhost:44310': 'https://comaroundtest.onmicrosoft.com/locationServer'
+            'https://azureadbackend.azurewebsites.net/': 'https://comaroundtest.onmicrosoft.com/locationServer'
         };
 
         var adalConfig = {
             instance: 'https://login.microsoftonline.com/',
-            tenant: adalConstants.TENANT,
-            clientId: adalConstants.APP_ID,
+            tenant: 'comaroundtest.onmicrosoft.com',
+            clientId: '43705a81-3993-4804-a0c5-1c08898283b8',
             endpoints: endpoints,
             extraQueryParameter: 'nux=1'
         };
