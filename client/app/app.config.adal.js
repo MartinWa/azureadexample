@@ -4,8 +4,15 @@
 
     angular
         .module('locationApp')
-        .config(config);
-
+        .config(config)
+        .run(function () {
+            Logging = {
+                level: 3,
+                log: function (message) {
+                    console.log(message);
+                }
+            };
+        });
     config.$inject = ['$httpProvider', 'adalAuthenticationServiceProvider'];
 
     function config($httpProvider, adalProvider) {
@@ -18,8 +25,7 @@
             instance: 'https://login.microsoftonline.com/',
             tenant: 'comaroundtest.onmicrosoft.com',
             clientId: '43705a81-3993-4804-a0c5-1c08898283b8',
-            endpoints: endpoints,
-            extraQueryParameter: 'nux=1'
+            endpoints: endpoints
         };
         adalProvider.init(adalConfig, $httpProvider);
     }
